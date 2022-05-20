@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-05-2022 a las 15:31:29
+-- Tiempo de generación: 20-05-2022 a las 16:48:43
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -48,7 +48,7 @@ INSERT INTO `orders` (`idOrder`, `idUser`, `orderNumber`, `dateTime`, `providerN
 (3, 1, '21', '2022-07-07', 'chile', '2022-05-20 04:56:56', '', 500, 'Aprobado'),
 (5, 2, '27', '2022-07-08', 'chile', '2022-05-20 12:12:40', '', 7500, 'Aprobado'),
 (6, 3, '28', '2022-07-08', 'chile', '2022-05-20 12:13:14', NULL, 7500, 'Aprobado'),
-(7, 3, '30', '2022-07-08', '', '2022-05-20 12:19:23', NULL, 7500, 'Aprobado');
+(7, 3, '35', '2022-07-08', '', '2022-05-20 12:19:23', NULL, 7500, 'Aprobado');
 
 -- --------------------------------------------------------
 
@@ -109,6 +109,7 @@ INSERT INTO `users` (`idUser`, `name`, `email`, `status`) VALUES
 --
 ALTER TABLE `orders`
   ADD PRIMARY KEY (`idOrder`),
+  ADD UNIQUE KEY `orderNumber` (`orderNumber`),
   ADD KEY `idUser` (`idUser`);
 
 --
@@ -116,6 +117,7 @@ ALTER TABLE `orders`
 --
 ALTER TABLE `orders_products`
   ADD PRIMARY KEY (`idOrdersProducts`),
+  ADD UNIQUE KEY `sku` (`sku`),
   ADD KEY `idOrder` (`idOrder`);
 
 --
