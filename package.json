@@ -1,0 +1,33 @@
+{
+  "name": "selaski-evaluation-back",
+  "version": "1.0.0",
+  "description": "This is a project that will allow to evaluate the participant's knowledge in the area of back with node.",
+  "main": "src/index.js",
+  "scripts": {
+    "dev": "nodemon ./build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CodingBryanMarquez/selaski-evaluation-back.git"
+  },
+  "keywords": [
+    "javascript",
+    "node"
+  ],
+  "author": "Bryan Marquez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/CodingBryanMarquez/selaski-evaluation-back/issues"
+  },
+  "homepage": "https://github.com/CodingBryanMarquez/selaski-evaluation-back#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "moment": "^2.29.3",
+    "morgan": "^1.10.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.16",
+    "pool": "^0.4.1"
+  }
+}
