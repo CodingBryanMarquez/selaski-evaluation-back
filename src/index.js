@@ -1,6 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
+const cors = require("cors");
 
 const dotenv = require("dotenv");
 dotenv.config();
@@ -8,6 +9,7 @@ dotenv.config();
 const server = express();
 apiPort = process.env.PORT ? process.env.PORT : 3000;
 
+server.use(cors());
 server.use(morgan("dev"));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({ extended: true }));

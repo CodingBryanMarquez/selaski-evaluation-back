@@ -30,6 +30,23 @@ exports.product = async (req, res, next) => {
   );
 };
 
+exports.productOrder = async (req, res, next) => {
+  if (!req.params.id) return next(new AppError("No todo id found", 404));
+
+  await pool.query(
+    "Select * FROM orders_products WHERE idOrder = ?",
+    [req.params.id],
+    (err, data) => {
+      if (err) return next(new AppError(err));
+      res.status(200).json({
+        status: "success",
+        data: data,
+        message: "obtained",
+      });
+    }
+  );
+};
+
 exports.productAdd = async (req, res, next) => {
   if (!req.body) return next(new AppError("No form data found", 404));
 
